@@ -1,0 +1,44 @@
+ALTER TABLE Perfil 
+ADD CONSTRAINT PK_Perfil PRIMARY KEY (correo);
+
+ALTER TABLE Tema 
+ADD CONSTRAINT PK_Tema PRIMARY KEY (nombre);
+
+ALTER TABLE Trata 
+ADD CONSTRAINT PK_Trata PRIMARY KEY (nombre);
+
+ALTER TABLE Contenido 
+ADD CONSTRAINT PK_Contenido PRIMARY KEY (nombre);
+
+ALTER TABLE Temporal 
+ADD CONSTRAINT PK_Temporal PRIMARY KEY (nombre);
+
+ALTER TABLE Asignatura 
+ADD CONSTRAINT PK_Asignatura PRIMARY KEY (sigla);
+
+ALTER TABLE Filtro 
+ADD CONSTRAINT PK_Filtro PRIMARY KEY (nombre);
+
+ALTER TABLE Consulta 
+ADD CONSTRAINT PK_Consulta PRIMARY KEY (fecha,perfil);
+
+ALTER TABLE Opinion 
+ADD CONSTRAINT PK_Opinion PRIMARY KEY (numero);
+
+ALTER TABLE Es_Prerrequisito 
+ADD CONSTRAINT PK_Es_Prerrequisito PRIMARY KEY (nombre1,nombre2);
+
+ALTER TABLE Es_Subtema
+ADD CONSTRAINT PK_Es_Subtema PRIMARY KEY(nombre1,nombre2);
+
+ALTER TABLE Es_de
+ADD CONSTRAINT PK_Es_de PRIMARY KEY(nombre_contenido);
+
+ALTER TABLE Adjetivos
+ADD CONSTRAINT PK_Adjetivos PRIMARY KEY(adjetivo);
+
+ALTER TABLE Palabras
+ADD CONSTRAINT PK_Palabras PRIMARY KEY(nombre);
+
+ALTER TABLE Etiquetas
+ADD CONSTRAINT PK_Etiqueta PRIMARY KEY(nombre);

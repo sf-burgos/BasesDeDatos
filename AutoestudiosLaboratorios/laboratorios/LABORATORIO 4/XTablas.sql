@@ -1,0 +1,15 @@
+drop table Perfil;
+drop table Consulta;
+drop table Opinion;
+drop table Filtro;
+drop table Temporal;
+drop table Contenido;
+drop table Tema;
+drop table Trata;
+drop table Asignatura;
+drop table Palabras;
+drop table Es_Prerrequisito;
+drop table Es_Subtema;
+drop table Es_de;
+drop table Etiquetas;
+drop table Adjetivos;

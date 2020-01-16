@@ -1,0 +1,43 @@
+
+<!DOCTYPE detalle[
+	<!ELEMENT detalle (momentopositivo | momentonegativo | momentoerror)*>
+	<!ELEMENT momentopositivo (descripcion)>	
+	<!ELEMENT momentonegativo (descripcion)>
+	<!ELEMENT momentoerror (descripcion)>
+
+	<!ELEMENT descripcion (#PCDATA)>
+
+	<!ATTLIST momentopositivo momento CDATA #REQUIRED>
+	<!ATTLIST momentonegativo momento CDATA #REQUIRED>
+	<!ATTLIST momentoerror momento CDATA #REQUIRED>	
+]>
+
+<!-- XML ok Es correcto ya que cumple con los requisitos del DTD-->
+
+<detalle>
+	<momentopositivo momento='5'>
+		<descripcion>Divertido</descripcion>
+	</momentopositivo>
+
+	<momentonegativo momento='10'>
+		<descripcion>Malisimo</descripcion>
+	</momentonegativo>
+
+	<momentoerror momento='11'>
+		<descripcion>Imagen congelada</descripcion>
+	</momentoerror>
+</detalle> 
+
+<!-- XML NOOK No funciona al no tener un momento epesifico-->
+
+<detalle>
+	<momentopositivo>
+		<descripcion>Divertido</descripcion>
+	</momentopositivo>
+	<momentonegativo>
+		<descripcion>Malisimo</descripcion>
+	</momentonegativo>
+	<momentoerror>
+		<descripcion>Imagen congelada</descripcion>
+	</momentoerror>
+</detalle>

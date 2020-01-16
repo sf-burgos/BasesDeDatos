@@ -1,0 +1,7 @@
+/*UNIQUE*/	
+ALTER TABLE cliente
+ADD CONSTRAINT UK_cliente UNIQUE(nombre);
+
+ALTER TABLE libro 
+ADD CONSTRAINT UK_libro1 UNIQUE (Titulo);
+

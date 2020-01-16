@@ -1,0 +1,24 @@
+CREATE OR REPLACE PACKAGE PK_AUTOR IS
+	PROCEDURE AD_AUTOR (xnombre IN VARCHAR, xciudad IN VARCHAR,xpais IN NUMBER, xcod_libro IN VARCHAR);
+	FUNCTION CO_AUTOR return sys_refcursor;
+END PK_AUTOR;
+/
+CREATE OR REPLACE PACKAGE BODY PK_AUTOR IS
+    
+    PROCEDURE AD_AUTOR (xnombre IN VARCHAR, xciudad IN VARCHAR,xpais IN NUMBER, xcod_libro IN VARCHAR) IS
+    BEGIN
+    INSERT INTO autor VALUES (xnombrE, xciudad, xpais, xcod_libro);
+    COMMIT;
+    EXCEPTION
+        WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE_APPLICATION_ERROR(-20001,'Nose puede insertar');
+    END;
+    
+    FUNCTION CO_AUTOR RETURN SYS_REFCURSOR IS CO_AU SYS_REFCURSOR;
+    BEGIN
+    OPEN CO_AU FOR
+        SELECT * FROM autor;
+    END;
+
+END PK_AUTOR;

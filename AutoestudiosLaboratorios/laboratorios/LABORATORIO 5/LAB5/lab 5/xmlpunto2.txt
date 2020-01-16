@@ -1,0 +1,83 @@
+<!-- DTD-->
+<!DOCTYPE opiniones[
+		<!ELEMENT opiniones (numero)*>
+		<!ELEMENT numero (Topinion+, justificacion?, detalle?,adjetivo+)>
+
+		<!ELEMENT Topinion (#PCDATA)>
+		<!ELEMENT justificacion (#PCDATA)>
+		<!ELEMENT adjetivo (#PCDATA)>
+
+		<!ATTLIST numero id CDATA #REQUIRED>
+		<!ATTLIST numero fecha CDATA #REQUIRED>
+
+		<!ELEMENT detalle (momentopositivo | momentonegativo | momentoerror)*>
+		<!ELEMENT momentopositivo (descripcion)>	
+		<!ELEMENT momentonegativo (descripcion)>
+		<!ELEMENT momentoerror (descripcion)>
+
+		<!ELEMENT descripcion (#PCDATA)>
+	
+		<!ATTLIST momentopositivo momento CDATA #REQUIRED>
+		<!ATTLIST momentonegativo momento CDATA #REQUIRED>
+		<!ATTLIST momentoerror momento CDATA #REQUIRED>	
+]>
+
+
+<opiniones>
+<!-- PoblandoOK-->
+<!--insert into Opinion values (1, date'2019-03-06', N'E', N'divertido', null, N'juan.nieto-mo@mail.edu.co', N'Sebastian Nieto');-->
+	<numero id="1" fecha="2019-03-06">
+		<Topinion>E</Topinion>
+		<justificacion>Divertido</justificacion>
+		<detalle> 
+ 			<momentopositivo momento='1'>
+				<descripcion>Divertdo</descripcion>
+			</momentopositivo>
+
+			<momentonegativo momento='5'>
+				<descripcion>Aburrido</descripcion>
+			</momentonegativo>
+
+			<momentoerror momento='11'>
+				<descripcion>Sin imagen</descripcion>
+			</momentoerror>
+		</detalle>
+		<adjetivo> interesante </adjetivo> 
+	</numero>
+<!--insert into Opinion values (2, date'2019-03-06', N'G', N'interesante', null, N'brayan.burgos@mail.edu.co', N'Brayan Burgos');-->
+	<numero id="2" fecha="2019-03-06">
+		<Topinion>G</Topinion>
+		<justificacion>interesante</justificacion>
+		<detalle>
+			<momentopositivo momento='1'>
+				<descripcion>Alegre</descripcion>
+			</momentopositivo>
+
+			<momentonegativo momento='5'>
+				<descripcion>Da sueño</descripcion>
+			</momentonegativo>
+
+			<momentoerror momento='11'>
+				<descripcion>Sin audio</descripcion>
+			</momentoerror>
+		</detalle>
+		<adjetivo> creativo </adjetivo> 
+	</numero>
+<!--Poblando NoOK-->
+<!--insert into Opinion values (3, date'2019-03-06', N'G', N'detallado', null, N'paula.guevara@mail.edu.co', N'Paula Guevara');-->
+	<numero>
+		<Topinion > C </Topinion>
+		<justificacion> los datos no son claros en cuanto a sintaxis   </justificacion>
+		<detalle> verdaderamente no entiendo  </detalle>
+		<adjetivo> mejorable </adjetivo> 
+	</numero>
+					
+</opiniones>
+
+
+	
+
+			
+
+
+

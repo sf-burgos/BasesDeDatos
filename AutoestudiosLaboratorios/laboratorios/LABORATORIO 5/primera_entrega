@@ -1,0 +1,64 @@
+A. consultas iniciales
+
+a.con etiqueta
+/countries/country
+b.sin etiquetas
+/countries/country/@name
+c.numero
+2
+a. 
+/countries/country [@name='Venezuela']
+b.
+/countries/country [@name='Venezuela']/@*
+c.
+/countries/country [@name='Venezuela']/*
+3
+//Course[Description]/Title
+4
+//country[@name='Colombia']/@population
+5
+//country[@name='Colombia']/city/name
+6
+//country[@name='Colombia']/language/text()
+7
+//country[@name='Colombia']/city/name
+8
+//country[@population>500000000]/@name
+9
+//country[language/text()='Spanish']/@name
+10
+//country[language[@percentage='100']/text()='Spanish']/@name
+11
+//country[ language and not(language[@percentage>50])]/@name
+12
+//country[ language and city]/@name
+13
+//country[not(language) and not(city)]/@name
+14
+//country[count(language)>4]/@name
+15
+//country[@area>=avg(//country[@area]/@area)]/@name
+
+B. Quiz stanford
+
+1. 
+//country[@name="Mongolia"]/@area
+2.
+//country[@name=//city/name/text()]/@name
+3.
+//country[ language and language[@percentage>50]/text()="German"]/@name
+4.
+//country[@population=max(//country/@population)]/@name
+5.
+//country[count(city)>=3 and @population>3000000]/@name
+6.
+//country[language and (language/text()="German" and language/text()="French" ) ]/@name
+7.
+//country[ city/name/text()=following-sibling::country/city/name/text() or city/name/text()=preceding-sibling::country/city/name/text()]/@name
+8.
+//country[ language and language/text()="Russian"]/(@name,language/text())
+9.
+------------
+Pendiente
+10.
+

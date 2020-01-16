@@ -1,0 +1,15 @@
+delete from Perfil;
+delete from Consulta;
+delete from Opinion;
+delete from Filtro;
+delete from Temporal;
+delete from Contenido;
+delete from Trata;
+delete from Asignatura;
+delete from Palabras;
+delete from Es_Prerrequisito;
+delete from Es_Subtema;
+delete from Es_de;
+delete from Etiquetas;
+delete from Adjetivos;
+delete from Tema;

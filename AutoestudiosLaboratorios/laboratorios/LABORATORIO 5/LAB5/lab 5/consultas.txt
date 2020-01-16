@@ -1,0 +1,102 @@
+A. EXPLORANDO 
+1.
+Navegador:
+	Se puede reducir los elementos sin perder la estructura del arbol.
+	Se  puede verificar que se esta cumpliendo las sintaxis XML .
+	Se puede visualizar el archivo XML sin perder informacion del arbol
+	
+
+Editor archivo plano:
+	Se puede modificar la estructura del arbol mientras que en el navegador no.
+	Los editores pueden reconocer patrones de uso de las etiquetas, lo que permite editar el archive más rapido.
+	Una desventaja es que dependiendo del archive plano, puedo o no respetar la jerarquia del arbol.
+
+
+A. consultas iniciales
+1.
+a.con etiqueta
+/countries/country
+b.sin etiquetas
+/countries/country/@name
+c.numero
+2
+a. 
+/countries/country [@name='Venezuela']
+b.
+/countries/country [@name='Venezuela']/@*
+c.
+/countries/country [@name='Venezuela']/*
+3
+//Course[Description]/Title
+4
+//country[@name='Colombia']/@population
+5
+//country[@name='Colombia']/city/name
+6
+//country[@name='Colombia']/language/text()
+7
+//country[@name='Colombia']/city/name
+8
+//country[@population>500000000]/@name
+9
+//country[language/text()='Spanish']/@name
+10
+//country[language[@percentage='100']/text()='Spanish']/@name
+11
+//country[ language and not(language[@percentage>50])]/@name
+12
+//country[ language and city]/@name
+13
+//country[not(language) and not(city)]/@name
+14
+//country[count(language)>4]/@name
+15
+//country[@area>=avg(//country[@area]/@area)]/@name
+
+B. Quiz stanford
+
+1. 
+//country[@name="Mongolia"]/@area
+2.
+//country[@name=//city/name/text()]/@name
+3.
+//country[ language and language[@percentage>50]/text()="German"]/@name
+4.
+//country[@population=max(//country/@population)]/@name
+5.
+//country[count(city)>=3 and @population>3000000]/@name
+6.
+//country[language and (language/text()="German" and language/text()="French" ) ]/@name
+7.
+//country[ city/name/text()=following-sibling::country/city/name/text() or city/name/text()=preceding-sibling::country/city/name/text()]/@name
+8.
+//country[ language and language/text()="Russian"]/(@name,language/text())
+9.
+------------
+Pendiente
+10.
+//country[city/population/text()>7000000]/@name
+11.
+//country[language and sum(language/@percentage)<90]/@name
+12.
+//country[language and count(language[@percentage>=20])<1]/@name
+13.
+-----------
+Pendiente
+
+C. Consultas inventadas
+
+1. ¿En qué países no  existe un lenguage mayoritario?
+/countries/country[ count(language) = count( language[ @ percentage <= 50 ] ) and language ] / data(@name)
+
+2. ¿Que idiomas se hablan en Francia?
+/countries/country[@name="France"] / data(language)
+
+3. ¿En que paises se habla frances?
+/countries/country[ language = "French" and language] /data(@name)
+
+4.¿Que paises tienen una poblacion menor o igual al promedio?
+/countries/country[ @population <= avg(//country/@population) ] / data(@name)
+
+5.¿Cuales  paises tienen 10 ciudades ? (en el archivo)
+/countries/country[ count(city)= 10 and city] / data(@name)

@@ -1,0 +1,16 @@
+<!DOCTYPE countries[
+	<!ELEMENT countries (country)*>
+	<!ELEMENT country (city | language)*>
+	<!ELEMENT city (name,population)+>
+
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT population (#PCDATA)>
+	<!ELEMENT language (#PCDATA)>
+	
+	<!ATLIST country name ID #REQUIRED>
+	<!ATLIST country population CDATA #REQUIRED>
+	<!ATLIST country area CDATA #REQUIRED>
+
+	<!ATLIST language percentage CDATA #REQUIRED>
+
+]>

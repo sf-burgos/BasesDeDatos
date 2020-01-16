@@ -1,0 +1,55 @@
+Sur america
+Argentina
+	La plata
+Bolivia
+	Santa cruz de la sierra
+	La paz
+Brasil
+	Porto Velho
+Chile
+	Puente alto
+	Maipu
+Colombia
+	Cartagena
+Guayana
+	Georgetown
+	Linden
+Ecuador
+	santo domingo
+Paraguay
+	Asuncion
+	Ciudad del Este
+Peru
+	arequipa
+	trujillo
+Uruguay
+	Ciudad de la Costa
+	Salto
+Venezuela
+	barquisimeto
+	Valencia
+	
+Centro America
+Haiti
+	Cabo Haitiano
+	Puerto Principe
+Guatemala
+	peten
+	Ciudad de guatemala
+	huehuetanango
+Honduras
+	tegucigalpa
+	San Pedr Sula
+El salvador
+	san salvador
+	soyapango
+Nicaragua
+	El almendro
+Costa Rica
+	---------------------
+	terminar desde aca
+	alajuela	
+	San Fransisco
+Panama
+	Panama
+	chiriqui

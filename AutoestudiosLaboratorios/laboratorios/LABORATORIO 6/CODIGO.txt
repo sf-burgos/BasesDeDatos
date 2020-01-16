@@ -1,0 +1,12 @@
+insert into mbdaa01.contenidos values('brayan.burgos@mail.escuelaing.edu.co','BrayanBurgos','Y','learning','www.google.edu.co/brayanburgos','F',NULL,NULL,'FIEM');
+insert into mbdaa01.contenidos values('juan.nieto-mo@mail.escuelaing.edu.co','SebastianNieto','Y','coaching','www.google.edu.co/sebastiannieto','V','320','E','POOB');
+/*MODIFICAR*/
+insert into mbdaa01.contenidos values('brayan.burgos@mail.escuelaing.edu.co','BrayanBurgos','Y','learning PYTHON','www.google.edu.co/brayanburgos','F',NULL,NULL,'FIEM');
+/*ELIMINAR USUARIO*/
+DROP USER BD2142787;
+
+/*D. instruccion de privilegios*/
+GRANT DELETE ON mbdaa01.CONTENIDOS TO BD2141666,BD2142787;
+
+select * from MbdAA01.CONTENIDOS;
+insert into BD2142787.CONTENIDO SELECT *  FROM MBDAA01.CONTENIDOS;

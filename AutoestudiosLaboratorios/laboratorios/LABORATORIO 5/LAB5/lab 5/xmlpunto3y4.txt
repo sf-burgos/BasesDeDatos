@@ -1,0 +1,67 @@
+
+<!--Consulta del punto 3 -->
+SELECT Tema.nombre,contenido, numero, detalle.momentoerror FROM opinion JOIN detalle ON (opinion.numero=detalle.clave) JOIN Tema ON (Tema.perfil=Opinion.perfil) ORDER by detalle.momentoerror;
+
+
+
+
+<!DOCTYPE detalle[
+	<!ELEMENT detalle (momentopositivo | momentonegativo | momentoerror | puntuacion)*>
+	<!ELEMENT momentopositivo (descripcion)>	
+	<!ELEMENT momentonegativo (descripcion)>
+	<!ELEMENT momentoerror (descripcion)>
+	
+	<!ELEMENT puntuacion (#PCDATA)>
+	<!ELEMENT descripcion (#PCDATA)>
+
+	<!ATTLIST momentopositivo momento CDATA #REQUIRED>
+	<!ATTLIST momentonegativo momento CDATA #REQUIRED>
+	<!ATTLIST momentoerror momento CDATA #REQUIRED>	
+]>
+
+<opiniones>
+
+	<numero id="1" fecha="2019-03-06">
+		<Topinion>E</Topinion>
+		<justificacion>Divertido</justificacion>
+		<detalle> 
+ 			<momentopositivo momento='1'>
+				<descripcion>Divertdo</descripcion>
+			</momentopositivo>
+
+			<momentonegativo momento='5'>
+				<descripcion>Aburrido</descripcion>
+			</momentonegativo>
+
+			<momentoerror momento='11'>
+				<descripcion>Sin imagen</descripcion>
+			</momentoerror>
+			<puntuacion>10</puntuacion>
+		</detalle>
+		<adjetivo> interesante </adjetivo> 
+	</numero>
+	<numero id="2" fecha="2019-03-06">
+		<Topinion>G</Topinion>
+		<justificacion>interesante</justificacion>
+		<detalle>
+			<momentopositivo momento='1'>
+				<descripcion>Alegre</descripcion>
+			</momentopositivo>
+
+			<momentonegativo momento='5'>
+				<descripcion>Da sueño</descripcion>
+			</momentonegativo>
+
+			<momentoerror momento='11'>
+				<descripcion>Sin audio</descripcion>
+			</momentoerror>
+			<puntuacion>5</puntuacion>
+		</detalle>
+		<adjetivo> creativo </adjetivo> 
+	</numero>
+
+					
+</opiniones>
+
+<!--Consulta del punto 4 -->
+SELECT Tema.nombre,contenido, numero, detalle.momentoerror, detalle.puntuacion FROM opinion JOIN detalle ON (opinion.numero=detalle.clave) JOIN Tema ON (Tema.perfil=Opinion.perfil) ORDER by detalle.momentoerror;
